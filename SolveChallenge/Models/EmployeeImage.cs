@@ -1,5 +1,8 @@
-﻿namespace SolveChallenge.Models
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace SolveChallenge.Models
 {
+    [PrimaryKey(nameof(EmployeeId), nameof(Img))]
     class EmployeeImage
     {
         public string Img { get; set; }

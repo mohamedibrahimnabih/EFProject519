@@ -5,7 +5,9 @@ namespace SolveChallenge.Data
 {
     class ApplicationDbContext : DbContext
     {
-
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<EmployeeImage> EmployeeImages { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
@@ -15,6 +17,18 @@ namespace SolveChallenge.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Employee>()
+                .Property(e => e.Name)
+                .HasColumnType("varchar(100)");
+
+            modelBuilder.Entity<Employee>()
+                .Property(e => e.Name)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<EmployeeImage>()
+                .HasKey(e => new { e.EmployeeId, e.Img });
         }
     }
 }
