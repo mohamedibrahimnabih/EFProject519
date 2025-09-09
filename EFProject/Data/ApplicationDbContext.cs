@@ -8,6 +8,8 @@ namespace EFProject.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Cart> Carts { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -32,7 +34,7 @@ namespace EFProject.Data
                 .HasKey(e => e.Id);
 
             modelBuilder.Entity<ProductImage>()
-                .HasKey(e => new { e.Img, e.ProductId });
+                .HasKey(e => new { e.Img, e.Product_Id });
         }
     }
 }

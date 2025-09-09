@@ -13,5 +13,8 @@ namespace EFProject.Models
         public string Name { get; set; }
         public decimal Price { get; set; }
         public string MainImg { get; set; }
+
+        public Category Category { get; set; }
+        //public List<User> Users { get; set; }
     }
 }

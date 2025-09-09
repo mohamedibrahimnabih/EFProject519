@@ -40,7 +40,7 @@ namespace EFProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("EFProject.Models.Product", b =>
@@ -67,7 +67,7 @@ namespace EFProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("EFProject.Models.ProductImage", b =>
@@ -83,7 +83,7 @@ namespace EFProject.Migrations
 
                     b.HasKey("Img", "ProductId");
 
-                    b.ToTable("ProductImages");
+                    b.ToTable("ProductImages", (string)null);
                 });
 #pragma warning restore 612, 618
         }
